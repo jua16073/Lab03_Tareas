@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(0,52,89);   
+    font-family: Comfortaa; 
+}
+
+
+.title{
+    text-align: center;
+    width: 100%;
+    color: white;
+    margin: none;
+}
+
+
+.grid{
+    width: 45rem;
+    height: 27rem;
+    background: rgb(0,52,89);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.row{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.btns{
+    text-align: center;
+    flex: 1;
+    cursor: pointer;
+    border: none;
+    background: rgb(46,139,143);
+    margin: 1em;
+}
+
+.pressed {
+    /*background-image: url("assets/x.png");*/
+    /*background: maroon;*/
+    cursor: default;
+}
+
+.redo {
+    text-align: center;
+    flex: 1;
+    border: none;
+    width: 8rem;
+    height: 3rem;
+}
+
+.final{
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    flex-direction: column;
+}
+
+.button{
+    align-self: center;
+    margin-top: 2em;
+    height: 3em;
+    border: none;
+    color: white;
+    background: rgb(46,139,143);
+}
+
+.texto{
+    color: white;
+    text-align: center;
+}
+
+.img{
+    align-self: center;
+    transform: scale(.7);
+}
+
