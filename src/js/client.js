@@ -3,6 +3,13 @@ const states = {
   info: null,
 };
 
+const completar = (btn, num) => {
+  btn.onclick = () => {
+    states.info[num].isCompleted = !states.info[num].isCompleted;
+    render(states);
+  };
+};
+
 const render = (tareasSt) => {
   // repintar la pagina
   if (root.hasChildNodes()) {
@@ -53,6 +60,7 @@ const render = (tareasSt) => {
           tarea.innerHTML = tareasSt.info[x].title;
           tarea.className = 'tareas';
           if (tareasSt.info[x].isCompleted === true) tarea.classList.add('completed');
+          completar(tarea, x);
           lista.appendChild(tarea);
         }
         break;
@@ -63,6 +71,7 @@ const render = (tareasSt) => {
             tarea.innerHTML = tareasSt.info[x].title;
             tarea.className = 'tareas';
             tarea.classList.add('completed');
+            completar(tarea, x);
             lista.appendChild(tarea);
           }
         }
@@ -73,6 +82,7 @@ const render = (tareasSt) => {
             const tarea = document.createElement('button');
             tarea.innerHTML = tareasSt.info[x].title;
             tarea.className = 'tareas';
+            completar(tarea, x);
             lista.appendChild(tarea);
           }
         }
@@ -82,6 +92,28 @@ const render = (tareasSt) => {
         break;
     }
   }
+
+  const final = document.createElement('div');
+  final.className = 'forRows end';
+  root.appendChild(final);
+
+  const input = document.createElement('input');
+  input.className = 'nuevaT';
+  final.appendChild(input);
+
+  const nuevo = document.createElement('button');
+  nuevo.className = 'crear';
+  nuevo.innerHTML = 'AGREGAR';
+  nuevo.onclick = () => {
+    console.log(input.value);
+    const nInfo = {
+      title: input.value,
+      isCompleted: false,
+    };
+    tareasSt.info.push(nInfo);
+    render(tareasSt);
+  };
+  final.appendChild(nuevo);
 };
 
 const assign = (j) => {

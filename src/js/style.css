@@ -75,3 +75,32 @@ body {
 .completed{
   background: darkseagreen;
 }
+
+.end{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  position: fixed;
+  bottom: 0%;
+  height: 2.5rem;
+  margin-left: 2.5rem;
+  margin-right: .5rem; 
+  margin-bottom: 0.3rem;
+}
+
+.nuevaT{
+  flex: 4;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.crear{
+  flex: 1;
+  border: none;
+  background: darkcyan;
+  color: white;
+  font-size: 95%;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  cursor: pointer;
+}
